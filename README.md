@@ -16,7 +16,7 @@ to support data-driven decision-making in an e-commerce context.
 
 ## 🧭 Business Context
 
-This project is based on the **Online Retail (UK) dataset**, which contains real transactional data from a UK-based online store between **December 2010 and December 2011**.
+This project is based on the **Online Retail (UK) dataset**, which contains real transactional data from a UK-based online store between **December 2009 and December 2011**.
 
 The dataset includes:
 
@@ -45,6 +45,7 @@ The main business question of this project is:
 To answer this, the project follows a two-stage analytical approach:
 
 1️⃣ **Exploratory analysis with Tableau (descriptive analytics)**
+
 2️⃣ **Machine learning forecasting with Python + predictive Tableau dashboard**
 
 This workflow reflects real industry practice: first understand the data visually, then model it.
