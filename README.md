@@ -3,7 +3,7 @@
 🔗 **Live Exploratory Tableau Dashboard:**  
 https://public.tableau.com/shared/X8JPHBQY5?:display_count=n&:origin=viz_share_link
 
-End-to-end sales analytics and forecasting project using **Python (Machine Learning)** and **Tableau**, based on the **UK Online Retail dataset**.
+End-to-end sales analytics and forecasting project using **Python (Machine Learning)** and **Tableau**, based on the **UK Online Retail dataset** (https://archive.ics.uci.edu/dataset/502/online+retail+ii).
 
 The project combines:
 
