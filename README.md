@@ -1,88 +1,191 @@
-# 📈 Online Retail Sales Forecasting & Tableau Dashboard
+# 📈 Online Retail Sales Forecasting & Tableau Dashboards (ML + Tableau)
 
-End-to-end sales forecasting project using **Python (Machine Learning)** and **Tableau**, based on the **UK Online Retail dataset**.  
-The project focuses on predicting future revenue and communicating insights through interactive dashboards and business-oriented storytelling.
+End-to-end sales analytics and forecasting project using **Python (Machine Learning)** and **Tableau**, based on the **UK Online Retail dataset**.
+
+The project combines:
+
+* **Exploratory business intelligence in Tableau**, and
+* **Predictive analytics using machine learning**,
+
+to support data-driven decision-making in an e-commerce context.
 
 ---
 
-## 🎯 Business Objective
+## 🧭 Business Context
 
-The goal of this project is to answer the following question:
+This project is based on the **Online Retail (UK) dataset**, which contains real transactional data from a UK-based online store between **December 2010 and December 2011**.
+
+The dataset includes:
+
+* Invoice number and date
+* Product description
+* Quantity and unit price
+* Customer ID
+* Country
+
+The dataset is realistic and messy, including:
+
+* Cancelled orders (negative quantities)
+* Missing customer IDs
+* Price outliers
+
+These issues were addressed during data cleaning and exploratory analysis.
+
+---
+
+## 🎯 Project Objective
+
+The main business question of this project is:
 
 > **How can we forecast monthly revenue and evaluate different commercial scenarios in an e-commerce business?**
 
-Using historical transaction data, a machine learning model is trained to predict future sales, and the results are visualized in Tableau to support decision-making.
+To answer this, the project follows a two-stage analytical approach:
+
+1️⃣ **Exploratory analysis with Tableau (descriptive analytics)**
+2️⃣ **Machine learning forecasting with Python + predictive Tableau dashboard**
+
+This workflow reflects real industry practice: first understand the data visually, then model it.
 
 ---
 
-## 📦 Dataset
+## 🛠 Tools & Technologies
 
-**Source:** Online Retail (UK) dataset  
-**Period:** December 2010 – December 2011  
-
-The dataset contains transactional data from a UK-based online retailer, including:
-
-- Invoice number and date  
-- Product information  
-- Quantity and unit price  
-- Customer ID  
-- Country  
-
-> ⚠️ The dataset includes cancelled orders (negative quantities), missing customer IDs, and price outliers, which are handled during data cleaning and EDA.
+* **Python:** Pandas, NumPy, Scikit-learn, Matplotlib
+* **Machine Learning:** Regression models, time-based validation
+* **Visualization:** Tableau Desktop / Tableau Public
+* **Version Control:** Git & GitHub
 
 ---
 
-## 🧠 Methodology
+## 🔍 Stage 1 — Exploratory Tableau Dashboard (First Dashboard)
+
+Before building any machine learning model, an **exploratory Tableau dashboard** was created to understand historical sales behavior and business patterns.
+
+### 🎯 Purpose
+
+This dashboard aimed to:
+
+* Explore historical trends visually
+* Identify seasonality and anomalies
+* Detect potential data issues
+* Generate business hypotheses
+* Inform feature engineering decisions for the ML model
+
+### 📊 Key Visuals Included
+
+The exploratory dashboard contains:
+
+1️⃣ **Monthly Revenue Trend**
+
+* Shows overall sales evolution from Dec 2010 to Dec 2011
+* Helps detect seasonality and growth patterns
+
+2️⃣ **Revenue by Country**
+
+* Highlights the most important markets
+* Shows strong revenue concentration in a few countries (mainly the UK, Germany, and France)
+
+3️⃣ **Top Products by Revenue**
+
+* Identifies best-selling products
+* Useful for inventory and marketing prioritization
+
+4️⃣ **Customer Contribution Analysis**
+
+* Reveals that a small number of customers generate a large share of revenue (Pareto effect)
+
+📷 **Dashboard Preview:**
+![Exploratory Tableau Dashboard](images/dashboard_preview.png)
+
+👉 This dashboard provided the analytical foundation that guided the feature engineering and forecasting strategy.
+
+---
+
+## 🧠 Stage 2 — Machine Learning Methodology
 
 ### 1️⃣ Data Preparation & EDA
-- Data cleaning and validation
-- Removal of cancelled transactions
-- Revenue calculation (`Quantity × UnitPrice`)
-- Monthly aggregation by country
-- Exploratory analysis focused on business metrics
+
+* Data cleaning and validation
+* Removal of cancelled transactions
+* Revenue calculation:
+
+> `Revenue = Quantity × UnitPrice`
+
+* Monthly aggregation by country
+* Exploratory analysis focused on business metrics
+
+---
 
 ### 2️⃣ Feature Engineering
-- Temporal features (year, month)
-- Lagged revenue features
-- Rolling averages (3M, 6M)
-- Business metrics:
-  - Number of orders
-  - Unique customers
-  - Average order value
+
+New features were created to improve forecasting:
+
+* Temporal features (year, month)
+* Lagged revenue features
+* Rolling averages (3-month and 6-month)
+
+Business metrics included:
+
+* Number of orders
+* Number of unique customers
+* Average order value (AOV)
+
+---
 
 ### 3️⃣ Modeling & Forecasting
-- Time-based train / test split
-- Baseline model (previous month revenue)
-- Machine learning model (regression-based)
-- Evaluation using MAE, RMSE, and MAPE
-- Short-term revenue forecast for future months
 
-### 4️⃣ Visualization & Storytelling (Tableau)
-- Real vs predicted revenue analysis
-- Forecast visualization with clear temporal separation
-- What-if scenarios using interactive parameters
-- Executive-level storytelling using Tableau Story Points
+* Time-based train/test split
+
+* Baseline model: previous month revenue
+
+* Regression-based machine learning model
+
+* Evaluation using:
+
+  * MAE
+  * RMSE
+  * MAPE
+
+* Short-term revenue forecast for future months
 
 ---
 
 ## 🔮 Forecasting Strategy
 
-- **Training period:** Dec 2010 – Sep 2011  
-- **Validation period:** Oct 2011 – Nov 2011  
-- **Forecast horizon:** Dec 2011 – Feb 2012  
+* **Training period:** Dec 2010 – Sep 2011
+* **Validation period:** Oct 2011 – Nov 2011
+* **Forecast horizon:** Dec 2011 – Feb 2012
 
-Historical predictions are evaluated against real data, while future predictions are presented as scenarios rather than exact values.
+Historical predictions were compared against real data, while future predictions were presented as scenarios rather than exact values.
 
 ---
 
-## 📊 Tableau Dashboards
+## 📊 Stage 3 — Predictive Tableau Dashboards
 
-The Tableau workbook includes:
+The final Tableau workbook includes four main views:
 
-- **Executive Overview:** KPIs and revenue trends  
-- **Forecast Analysis:** Real vs predicted revenue and error analysis  
-- **What-If Scenarios:** Impact of growth and customer changes  
-- **Story:** Guided narrative for business stakeholders  
+### ✅ Executive Overview
+
+* KPIs
+* Revenue trends
+* High-level business insights
+
+### ✅ Forecast Analysis
+
+* Real vs predicted revenue
+* Error analysis over time
+
+### ✅ What-If Scenarios
+
+Interactive parameters allowing users to simulate:
+
+* Revenue growth
+* Changes in number of customers
+* Changes in average order value
+
+### ✅ Tableau Story
+
+A guided narrative designed for business stakeholders, explaining insights step-by-step.
 
 ---
 
@@ -110,32 +213,23 @@ online-retail-forecast-tableau/
 │   └── dashboard_preview.png
 │
 └── README.md
+```
 
 ---
 
+## 📌 Key Takeaways
 
-🛠️ Tools & Technologies
+* Demonstrates a **complete end-to-end analytics workflow**
+* Combines **machine learning with business visualization**
+* Emphasizes interpretability and decision support
+* Designed for both technical and non-technical audiences
+* Shows professional data science best practices
 
-Python: Pandas, NumPy, Scikit-learn, Matplotlib
+---
 
-Machine Learning: Regression models, time-based validation
+## 👤 Author
 
-Visualization: Tableau
-
-Version Control: Git & GitHub
-
-📌 Key Takeaways
-
-Demonstrates an end-to-end analytics workflow
-
-Combines machine learning with business-focused visualization
-
-Emphasizes interpretability and decision support
-
-Designed to be understandable for both technical and non-technical stakeholders
-
-👤 Author
-
-Nahuel Moreno Yalet
+**Nahuel Moreno Yalet**
 Industrial Engineer | PhD in Theoretical & Computational Chemistry
-Data Analytics & Data Scientist
+Data Analyst | Data Scientist
+SQL • Python • Tableau • Power BI
