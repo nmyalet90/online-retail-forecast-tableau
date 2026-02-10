@@ -1,5 +1,8 @@
 # 📈 Online Retail Sales Forecasting & Tableau Dashboards (ML + Tableau)
 
+🔗 **Live Exploratory Tableau Dashboard:**  
+https://public.tableau.com/shared/X8JPHBQY5?:display_count=n&:origin=viz_share_link
+
 End-to-end sales analytics and forecasting project using **Python (Machine Learning)** and **Tableau**, based on the **UK Online Retail dataset**.
 
 The project combines:
@@ -57,27 +60,36 @@ This workflow reflects real industry practice: first understand the data visuall
 
 ---
 
-## 🔍 Stage 1 — Exploratory Tableau Dashboard (First Dashboard)
+## 🔍 Stage 1 — Data Preparation & Exploratory Data Analisis (EDA) 
 
-Before building any machine learning model, an **exploratory Tableau dashboard** was created to understand historical sales behavior and business patterns.
 
-### 🎯 Purpose
+* Data cleaning and validation
+* Removal of cancelled transactions
+* Monthly aggregation by country
+* Revenue calculation:
+
+> `Revenue = Quantity × UnitPrice`
+
+
+---
+
+## 🔍 Stage 2 Exploratory Tableau Dashboard (First Dashboard)
+
+
+Before building any machine learning model, an exploratory Tableau dashboard was created to understand historical sales behavior and business patterns.
 
 This dashboard aimed to:
 
 * Explore historical trends visually
 * Identify seasonality and anomalies
-* Detect potential data issues
 * Generate business hypotheses
 * Inform feature engineering decisions for the ML model
-
-### 📊 Key Visuals Included
 
 The exploratory dashboard contains:
 
 1️⃣ **Monthly Revenue Trend**
 
-* Shows overall sales evolution from Dec 2010 to Dec 2011
+* Shows overall sales evolution from Dec 2009 to Dec 2011
 * Helps detect seasonality and growth patterns
 
 2️⃣ **Revenue by Country**
@@ -94,29 +106,22 @@ The exploratory dashboard contains:
 
 * Reveals that a small number of customers generate a large share of revenue (Pareto effect)
 
+
+🔗 **Access it here:**  
+https://public.tableau.com/shared/X8JPHBQY5?:display_count=n&:origin=viz_share_link
+
 📷 **Dashboard Preview:**
-![Exploratory Tableau Dashboard](images/dashboard_preview.png)
+
+![Exploratory Tableau Dashboard](images/exploratory_dashboard.png)
 
 👉 This dashboard provided the analytical foundation that guided the feature engineering and forecasting strategy.
 
 ---
 
-## 🧠 Stage 2 — Machine Learning Methodology
+## 🧠 Stage 3 — Machine Learning Methodology
 
-### 1️⃣ Data Preparation & EDA
 
-* Data cleaning and validation
-* Removal of cancelled transactions
-* Revenue calculation:
-
-> `Revenue = Quantity × UnitPrice`
-
-* Monthly aggregation by country
-* Exploratory analysis focused on business metrics
-
----
-
-### 2️⃣ Feature Engineering
+### 1️⃣ Feature Engineering
 
 New features were created to improve forecasting:
 
@@ -124,15 +129,9 @@ New features were created to improve forecasting:
 * Lagged revenue features
 * Rolling averages (3-month and 6-month)
 
-Business metrics included:
-
-* Number of orders
-* Number of unique customers
-* Average order value (AOV)
-
 ---
 
-### 3️⃣ Modeling & Forecasting
+### 2️⃣ Modeling & Forecasting
 
 * Time-based train/test split
 
@@ -152,7 +151,7 @@ Business metrics included:
 
 ## 🔮 Forecasting Strategy
 
-* **Training period:** Dec 2010 – Sep 2011
+* **Training period:** Dec 2009 – Sep 2011
 * **Validation period:** Oct 2011 – Nov 2011
 * **Forecast horizon:** Dec 2011 – Feb 2012
 
@@ -160,7 +159,7 @@ Historical predictions were compared against real data, while future predictions
 
 ---
 
-## 📊 Stage 3 — Predictive Tableau Dashboards
+## 📊 Stage 4 — Predictive Tableau Dashboards
 
 The final Tableau workbook includes four main views:
 
@@ -207,10 +206,12 @@ online-retail-forecast-tableau/
 │   └── 03_modeling.ipynb
 │
 ├── tableau/
-│   └── revenue_forecast.twbx
+│   └── exploratory_dashboard.twb
+│   └── revenue_forecast.twb
 │
 ├── images/
-│   └── dashboard_preview.png
+│   └── exploratory_dashboard.png
+│   └── revenue_forecast.png
 │
 └── README.md
 ```
